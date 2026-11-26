@@ -54,9 +54,26 @@ Số đo từ `scripts/pp_prelabel.py --frames d14_2A202603309/frames_B.txt --co
 
 | Xóa | Thêm | Sửa | Chi phí |
 |---:|---:|---:|---:|
-| | | | |
+| 43 | 10 | 5 | 25.4 |
 
-- Loại box tốn công sửa nhất ở tập B: ...
+Tổng cộng 12 frame: nhãn tham chiếu có 125 hộp, mô hình dự đoán 158 hộp, 115 cặp ghép được (BEV IoU ≥ 0.3, trong 50 m).
+
+| Frame | Xóa | Thêm | Sửa | Chi phí |
+|---|---:|---:|---:|---:|
+| s01f00 | 4 | 2 | 2 | 4.2 |
+| s01f25 | 2 | 2 | 1 | 3.1 |
+| s01f51 | 8 | 0 | 1 | 2.9 |
+| s02f20 | 5 | 1 | 0 | 2.5 |
+| s02f36 | 1 | 1 | 0 | 1.3 |
+| s02f51 | 0 | 0 | 0 | 0.0 |
+| s03f02 | 3 | 1 | 0 | 1.9 |
+| s03f32 | 2 | 1 | 1 | 2.1 |
+| s03f54 | 7 | 1 | 0 | 3.1 |
+| s04f09 | 6 | 0 | 0 | 1.8 |
+| s04f34 | 2 | 1 | 0 | 1.6 |
+| s04f52 | 3 | 0 | 0 | 0.9 |
+
+- Loại box tốn công sửa nhất ở tập B: **hộp thừa cần xóa** chiếm phần lớn chi phí (43 × 0.3 = 12.9, khoảng 51%), tiếp theo là **hộp bị sót cần thêm** (10 × 1.0 = 10.0, khoảng 39%) và hộp cần sửa (5 × 0.5 = 2.5, khoảng 10%). Dù đã dùng `score_thr=0.5`, mô hình vẫn vẽ thừa nhiều, tập trung ở s01f51, s03f54 và s04f09. Trong nhãn tham chiếu có 2 Bus và 2 Truck, đều là lớp mà mô hình KITTI không nhận ra trực tiếp, nên tôi phải sửa lớp hoặc vẽ thêm.
 
 ## 5. Giới hạn
 
